@@ -1,21 +1,21 @@
 # Multi-modal-Prediction-Model-for-Source-Rock-Quality
 A deep learning-based multimodal (text, image, numerical) data fusion model, specifically designed for the processing and prediction of small-sample, complex-type source rock data. By integrating seismic attribute data, waveform/frequency band images, and relevant geological text descriptions, this project achieves precise classification and assessment of source rock quality.
 
-📑 Project Introduction
+📑 Project Introduction  
 In geological exploration and source rock analysis, a single data source is often insufficient to fully capture the distribution characteristics of source rocks. To address this, our project constructs a multimodal neural network architecture that integrates:
 1.	Bidirectional Encoder Representation from Transformers (BERT)：Extract semantic features from text to describe the fundamental patterns of source rock distribution.
 2.	Convolutional Neural Networks (CNN)：Extract visual features from frequency band images
 3.	Multi-Layer Perceptron (MLP)：Process numerical features of seismic attributes.
 The model incorporates an attention mechanism during the feature fusion stage to adaptively assign weights to image and text features. These are then concatenated with numerical features to perform a five-class classification task of source rock quality (Best, Good, Moderate, Poor, and Sandstone).
 ________________________________________
-📊 Dataset Description
+📊 Dataset Description  
 The dataset consists of four primary task directories (e.g., Task 1 to Task 4), each containing data from the following three modalities:
 •	Numerical Data: Extracted from .xlsx files, containing 9 core seismic/well-logging attributes:：Depth, Cosine of Phase, Instantaneous Bandwidth, Instantaneous Frequency, Instantaneous Phase, Instantaneous Quality ($Q$), Root Mean Square (RMS) Amplitude, Relative Acoustic Impedance, and Variance.
 •	Visual Data (Image): The data is dynamically read and plotted as waveform images using matplotlib. These images are subsequently processed through grayscale conversion and downsampling to serve as spatial visual inputs for the model.
 •	Textual Data (Text): Sourced from .txt geological description files, these are transformed into 64-dimensional word embeddings using the bert-base-chinese model.
 •	Target Labels: Source rock quality categories consist of: Best (7,645), Sandstone (3,021), Good (2,065), Medium (1,087), and Bad (430).
 ________________________________________
-🧠 Model Architecture
+🧠 Model Architecture  
 The model architecture comprises three independent branch networks and a feature fusion module:
 1.	Image Sub-network：
 o	Utilizes multiple layers of Conv2D, BatchNormalization, and MaxPooling2D.
@@ -31,7 +31,7 @@ o	Concatenates image and text features, then computes attention weights using a 
 o	Concatenates the weighted image and text features with the numerical features along the channel dimension.
 o	The fused representation is fed into the final classifier, which outputs a probability distribution across the five target classes.
 ________________________________________
-⚙️ Dependencies
+⚙️ Dependencies  
 Before running this experiment, please ensure that the following dependencies are installed:
 Bash
 pip install pandas numpy matplotlib seaborn scikit-learn scikit-image
