@@ -2,7 +2,7 @@
 A deep learning-based multimodal (text, image, numerical) data fusion model, specifically designed for the processing and prediction of small-sample, complex-type source rock data. By integrating seismic attribute data, waveform/frequency band images, and relevant geological text descriptions, this project achieves precise classification and assessment of source rock quality.
 
 📑 Project Introduction  
-In geological exploration and source rock analysis, a single data source is often insufficient to fully capture the distribution characteristics of source rocks. To address this, our project constructs a multimodal neural network architecture that integrates:
+  In geological exploration and source rock analysis, a single data source is often insufficient to fully capture the distribution characteristics of source rocks. To address this, our project constructs a multimodal neural network architecture that integrates:
 1.	Bidirectional Encoder Representation from Transformers (BERT)：Extract semantic features from text to describe the fundamental patterns of source rock distribution.
 2.	Convolutional Neural Networks (CNN)：Extract visual features from frequency band images
 3.	Multi-Layer Perceptron (MLP)：Process numerical features of seismic attributes.
