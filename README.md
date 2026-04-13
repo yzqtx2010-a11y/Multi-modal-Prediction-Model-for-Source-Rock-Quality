@@ -10,16 +10,16 @@ The model incorporates an attention mechanism during the feature fusion stage to
 ________________________________________
 📊 ***Dataset Description***  
 The dataset consists of four primary task directories (e.g., Task 1 to Task 4), each containing data from the following three modalities:  
-•	**Numerical Data:** Extracted from .xlsx files, containing 9 core seismic/well-logging attributes:：Depth, Cosine of Phase, Instantaneous Bandwidth, Instantaneous Frequency, Instantaneous Phase, Instantaneous Quality ($Q$), Root Mean Square (RMS) Amplitude, Relative Acoustic Impedance, and Variance.  
-•	**Visual Data (Image):** The data is dynamically read and plotted as waveform images using matplotlib. These images are subsequently processed through grayscale conversion and downsampling to serve as spatial visual inputs for the model.  
-•	**Textual Data (Text):** Sourced from .txt geological description files, these are transformed into 64-dimensional word embeddings using the bert-base-chinese model.  
-•	**Target Labels:** Source rock quality categories consist of: Best (7,645), Sandstone (3,021), Good (2,065), Medium (1,087), and Bad (430).  
+1. **Numerical Data:** Extracted from .xlsx files, containing 9 core seismic/well-logging attributes:：Depth, Cosine of Phase, Instantaneous Bandwidth, Instantaneous Frequency, Instantaneous Phase, Instantaneous Quality ($Q$), Root Mean Square (RMS) Amplitude, Relative Acoustic Impedance, and Variance.  
+2. **Visual Data (Image):** The data is dynamically read and plotted as waveform images using matplotlib. These images are subsequently processed through grayscale conversion and downsampling to serve as spatial visual inputs for the model.  
+3. **Textual Data (Text):** Sourced from .txt geological description files, these are transformed into 64-dimensional word embeddings using the bert-base-chinese model.  
+4. **Target Labels:** Source rock quality categories consist of: Best (7,645), Sandstone (3,021), Good (2,065), Medium (1,087), and Bad (430).  
 ________________________________________
 🧠 ***Model Architecture***  
 The model architecture comprises three independent branch networks and a feature fusion module:  
 **1.	Image Sub-network：**   
-(1)	Utilizes multiple layers of Conv2D, BatchNormalization, and MaxPooling2D.  
-(2) After flattening via a GlobalAveragePooling2D layer, it connects to a Dense layer to output a 1D feature vector.  
+  (1)	Utilizes multiple layers of Conv2D, BatchNormalization, and MaxPooling2D.  
+  (2) After flattening via a GlobalAveragePooling2D layer, it connects to a Dense layer to output a 1D feature vector.  
 **2.	Text Sub-network：**    
 (1)	It accepts the text vectors preprocessed by BERT.  
 (2)	Employs a combination of Dense, BatchNormalization, and Dropout layers for non-linear mapping.  
