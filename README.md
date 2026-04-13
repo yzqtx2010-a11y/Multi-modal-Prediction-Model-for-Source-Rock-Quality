@@ -17,16 +17,16 @@ The dataset consists of four primary task directories (e.g., Task 1 to Task 4), 
 ________________________________________
 🧠 ***Model Architecture***  
 The model architecture comprises three independent branch networks and a feature fusion module:  
-1.	Image Sub-network：   
+**1.	Image Sub-network：**   
 (1)	Utilizes multiple layers of Conv2D, BatchNormalization, and MaxPooling2D.  
 (2) After flattening via a GlobalAveragePooling2D layer, it connects to a Dense layer to output a 1D feature vector.  
-2.	Text Sub-network：    
+**2.	Text Sub-network：**    
 (1)	It accepts the text vectors preprocessed by BERT.  
 (2)	Employs a combination of Dense, BatchNormalization, and Dropout layers for non-linear mapping.  
-3.	Numerical Sub-network：    
+**3.	Numerical Sub-network：**    
 (1)	Applies an adaptive Normalization layer to standardize the numerical features.  
 (2)	Extracts features through multiple layers of Dense networks with Dropout.  
-4.	Multi-modal Fusion & Attention：     
+**4.	Multi-modal Fusion & Attention：**     
 (1)	Concatenates image and text features, then computes attention weights using a Dense layer with Softmax activation and L2 regularization.  
 (2)	Concatenates the weighted image and text features with the numerical features along the channel dimension.  
 (3)	The fused representation is fed into the final classifier, which outputs a probability distribution across the five target classes.  
@@ -39,13 +39,13 @@ pip install tensorflow
 pip install torch transformers  
 ________________________________________
 🚀 ***Training Configuration and Experimental Details***
-•	Optimizer: Adam (initial learning rate lr=0.001)  
-•	Loss Function: Categorical Crossentropy   
-•	Evaluation Metric: Accuracy   
-•	Epochs: 100  
-•	Batch Size: 64  
-•	Callbacks:  
-	EarlyStopping: Monitors val_loss, patience=10, automatically restores the best model weights.  
+•	**Optimizer:** Adam (initial learning rate lr=0.001)  
+•	**Loss Function:** Categorical Crossentropy   
+•	**Evaluation Metric:** Accuracy   
+•	**Epochs:** 100  
+•	**Batch Size:** 64  
+•	**Callbacks:**  
+	**EarlyStopping:** Monitors val_loss, patience=10, automatically restores the best model weights.  
 	ReduceLROnPlateau: Monitors val_loss, reduces the learning rate by half (factor=0.5) after 4 epochs of stagnation.  
 ________________________________________
 📈 ***Model Performance and Result Visualization***   
@@ -55,7 +55,7 @@ Precision	0.7743
 Recall	0.7828
 F1-Score 	0.7749
 
-Visualization analysis includes：  
+**Visualization analysis includes：**  
 After executing the code, the following visualization plots will be generated in the current directory:
 1.	**training_history.png:** Records the loss and accuracy curves over 100 epochs, illustrating the model's convergence process.
 2.	**performance_metrics.png:** A bar chart displaying the four core performance evaluation metrics.
@@ -65,7 +65,7 @@ After executing the code, the following visualization plots will be generated in
 	t-SNE of Model Fusion Features.png: A 2D dimensionality reduction visualization of the deep fused features from the penultimate layer, demonstrating that the multi-modal fused features exhibit significantly better inter-class separability compared to the raw data.  
 	multimodal_tsne_comparison.png: A t-SNE comparison plot of the three individual unimodal features: text, image, and numerical.  
 ________________________________________
-📂 File Directory Structure
+📂 ***File Directory Structure***
 Plaintext
 ├── 任务一/  
 │   ├── PY10-6-4.txt  
@@ -80,7 +80,7 @@ Plaintext
 ├── roc_curves.png                      # 生成的ROC曲线  
 └── multimodal_tsne_comparison.png      # 生成的t-SNE可视化  
 ________________________________________
-💡 User Guide
+💡 ***User Guide***
 1.	Ensure your data is placed in the correct directory. (Please update the current_dir variable before calling get_all_files to match your actual file path).  
 2.	Ensure a stable internet connection to allow Hugging Face to download the pre-trained bert-base-chinese weights.  
 3.	Execute all cells in the Jupyter Notebook sequentially; the model will automatically handle data preprocessing, construction, training, and finally output and save the evaluation plots.  
