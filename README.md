@@ -49,11 +49,12 @@ ________________________________________
 	ReduceLROnPlateau: Monitors val_loss, reduces the learning rate by half (factor=0.5) after 4 epochs of stagnation.  
 ________________________________________
 📈 ***Model Performance and Result Visualization***   
-Metric	Score
-Accuracy	0.7828
-Precision	0.7743
-Recall	0.7828
-F1-Score 	0.7749
+Metric    |	    Score 
+----------|-----------
+Accuracy |	0.7828  
+Precision |	0.7743  
+Recall | 0.7828  
+F1-Score  |	0.7749  
 
 **Visualization analysis includes：**  
 After executing the code, the following visualization plots will be generated in the current directory:
@@ -61,12 +62,13 @@ After executing the code, the following visualization plots will be generated in
 2.	**performance_metrics.png:** A bar chart displaying the four core performance evaluation metrics.
 3.	**roc_curves.png:** Contains the ROC curves for all 5 classes and their corresponding AUC (Area Under the Curve) values, demonstrating the classifier's discriminative ability.
 4.	**t-SNE：**  
-	t-SNE of Raw Numerical Features.png: A 2D scatter plot of the original numerical features.  
-	t-SNE of Model Fusion Features.png: A 2D dimensionality reduction visualization of the deep fused features from the penultimate layer, demonstrating that the multi-modal fused features exhibit significantly better inter-class separability compared to the raw data.  
+(1)t-SNE of Raw Numerical Features.png: A 2D scatter plot of the original numerical features.  
+(2)t-SNE of Model Fusion Features.png: A 2D dimensionality reduction visualization of the deep fused features from the penultimate layer, demonstrating that  
+(3)the multi-modal fused features exhibit significantly better inter-class separability compared to the raw data.  
 	multimodal_tsne_comparison.png: A t-SNE comparison plot of the three individual unimodal features: text, image, and numerical.  
 ________________________________________
-📂 ***File Directory Structure***
-Plaintext
+📂 ***File Directory Structure***  
+Plaintext  
 ├── 任务一/  
 │   ├── PY10-6-4.txt  
 │   ├── PY10-6-4.xlsx  
