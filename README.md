@@ -67,21 +67,21 @@ o	multimodal_tsne_comparison.png: A t-SNE comparison plot of the three individua
 ________________________________________
 📂 File Directory Structure
 Plaintext
-├── 任务一/
-│   ├── PY10-6-4.txt
-│   ├── PY10-6-4.xlsx
-│   └── 代表砂岩的图像/
-│       └── PY10-6-4砂岩图像原始数据.xlsx
-├── 任务二/ ...
-├── 任务三/ ...
-├── 任务四/ ...
-├── multimodal predictive model.ipynb   # 核心代码文件
-├── training_history.png                # 生成的训练曲线
-├── roc_curves.png                      # 生成的ROC曲线
-└── multimodal_tsne_comparison.png      # 生成的t-SNE可视化
+├── 任务一/  
+│   ├── PY10-6-4.txt  
+│   ├── PY10-6-4.xlsx  
+│   └── 代表砂岩的图像/  
+│       └── PY10-6-4砂岩图像原始数据.xlsx  
+├── 任务二/ ...  
+├── 任务三/ ...  
+├── 任务四/ ...  
+├── multimodal predictive model.ipynb   # 核心代码文件  
+├── training_history.png                # 生成的训练曲线  
+├── roc_curves.png                      # 生成的ROC曲线  
+└── multimodal_tsne_comparison.png      # 生成的t-SNE可视化  
 ________________________________________
 💡 User Guide
-1.	Ensure your data is placed in the correct directory. (Please update the current_dir variable before calling get_all_files to match your actual file path).
-2.	Ensure a stable internet connection to allow Hugging Face to download the pre-trained bert-base-chinese weights.
-3.	Execute all cells in the Jupyter Notebook sequentially; the model will automatically handle data preprocessing, construction, training, and finally output and save the evaluation plots.
+1.	Ensure your data is placed in the correct directory. (Please update the current_dir variable before calling get_all_files to match your actual file path).  
+2.	Ensure a stable internet connection to allow Hugging Face to download the pre-trained bert-base-chinese weights.  
+3.	Execute all cells in the Jupyter Notebook sequentially; the model will automatically handle data preprocessing, construction, training, and finally output and save the evaluation plots.  
 
